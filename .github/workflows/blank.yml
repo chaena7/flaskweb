@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI_test
 
 # Controls when the workflow will run
 on:
@@ -18,4 +18,6 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: "3.8"
-      - run: python -c "print('Hello World')"
+      - run: pip install -r requirements.txt
+      - run: pytest
+      
