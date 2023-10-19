@@ -1,10 +1,5 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI_test
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
@@ -38,7 +33,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: chaena
-          password: dckr_pat_c8Rc90s3_xulxP1NgaWyGKh5xUc
+          password: ${{ secrets.ACCESSTOKEN }}
       - name: build and release to DockerHub
         env:
           NAME: chaena
